@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.ML.Data;
-using Microsoft.ML.Trainers.FastTree;
+using Microsoft.ML.Trainers.LightGbm;
 using Microsoft.ML.Trainers;
 using Microsoft.ML;
 
@@ -30,9 +30,9 @@ namespace Richter_THEC_Model
         {
             // Data process configuration with pipeline data transformations
             var pipeline = mlContext.Transforms.Categorical.OneHotEncoding(new []{new InputOutputColumnPair(@"Provider", @"Provider"),new InputOutputColumnPair(@"DayAndHour", @"DayAndHour")})      
-                                    .Append(mlContext.Transforms.ReplaceMissingValues(@"Distance", @"Distance"))      
-                                    .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"Provider",@"DayAndHour",@"Distance"}))      
-                                    .Append(mlContext.Regression.Trainers.FastForest(new FastForestRegressionTrainer.Options(){NumberOfTrees=4,FeatureFraction=0.988196907247402F,LabelColumnName=@"Total",FeatureColumnName=@"Features"}));
+                                    .Append(mlContext.Transforms.ReplaceMissingValues(new []{new InputOutputColumnPair(@"Distance", @"Distance"),new InputOutputColumnPair(@"Duration", @"Duration")}))      
+                                    .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"Provider",@"DayAndHour",@"Distance",@"Duration"}))      
+                                    .Append(mlContext.Regression.Trainers.LightGbm(new LightGbmRegressionTrainer.Options(){NumberOfLeaves=4,MinimumExampleCountPerLeaf=40,NumberOfIterations=21,MaximumBinCountPerFeature=286,LearningRate=1F,LabelColumnName=@"Total",FeatureColumnName=@"Features",Booster=new GradientBooster.Options(){SubsampleFraction=1F,FeatureFraction=0.975933530952993F,L1Regularization=2E-10F,L2Regularization=1584.59786723731F}}));
 
             return pipeline;
         }

@@ -30,9 +30,10 @@ namespace Richter_THEC_Model
         {
             // Data process configuration with pipeline data transformations
             var pipeline = mlContext.Transforms.Categorical.OneHotEncoding(new []{new InputOutputColumnPair(@"Provider", @"Provider"),new InputOutputColumnPair(@"DayAndHour", @"DayAndHour")})      
-                                    .Append(mlContext.Transforms.ReplaceMissingValues(@"Distance", @"Distance"))      
-                                    .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"Provider",@"DayAndHour",@"Distance"}))      
-                                    .Append(mlContext.Regression.Trainers.FastTree(new FastTreeRegressionTrainer.Options(){NumberOfLeaves=4,MinimumExampleCountPerLeaf=21,NumberOfTrees=12,MaximumBinCountPerFeature=588,LearningRate=1F,FeatureFraction=1F,LabelColumnName=@"Duration",FeatureColumnName=@"Features"}));
+                                    .Append(mlContext.Transforms.ReplaceMissingValues(new []{new InputOutputColumnPair(@"Distance", @"Distance"),new InputOutputColumnPair(@"Total", @"Total")}))      
+                                    .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"Provider",@"DayAndHour",@"Distance",@"Total"}))      
+                                    .Append(mlContext.Transforms.NormalizeMinMax(@"Features", @"Features"))      
+                                    .Append(mlContext.Regression.Trainers.FastTreeTweedie(new FastTreeTweedieTrainer.Options(){NumberOfLeaves=84,MinimumExampleCountPerLeaf=51,NumberOfTrees=617,MaximumBinCountPerFeature=1024,LearningRate=0.01381747721386F,FeatureFraction=1F,LabelColumnName=@"Duration",FeatureColumnName=@"Features"}));
 
             return pipeline;
         }

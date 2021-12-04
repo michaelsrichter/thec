@@ -5,18 +5,25 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.ML" Version="1.7.0" />
-    <PackageReference Include="Microsoft.ML.LightGbm" Version="1.7.0" />
+    <PackageReference Include="Microsoft.ML" Version="1.6.0" />
+    <PackageReference Include="Microsoft.ML.FastTree" Version="1.6.0" />
+    <PackageReference Include="Microsoft.ML.LightGbm" Version="1.6.0" />
   </ItemGroup>
   <ItemGroup>
     <None Update="DurationByDistance.mbconfig">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="DurationByDistance.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+  </ItemGroup>
+  <ItemGroup Label="TotalByDistance">
+    <None Include="TotalByDistance.consumption.cs">
+      <DependentUpon>TotalByDistance.mbconfig</DependentUpon>
     </None>
-    <None Update="TotalByDistance.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Include="TotalByDistance.training.cs">
+      <DependentUpon>TotalByDistance.mbconfig</DependentUpon>
+    </None>
+    <None Include="TotalByDistance.zip">
+      <DependentUpon>TotalByDistance.mbconfig</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup Label="DurationByDistance">

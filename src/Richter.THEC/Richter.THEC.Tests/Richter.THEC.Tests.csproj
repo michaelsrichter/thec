@@ -35,6 +35,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Richter.THEC.Api\Richter.THEC.Api.csproj" />
     <ProjectReference Include="..\Richter.THEC.Data\Richter.THEC.Data.csproj" />
+    <ProjectReference Include="..\Richter.THEC.Model\Richter.THEC.Model.csproj" />
   </ItemGroup>
 
 </Project>
