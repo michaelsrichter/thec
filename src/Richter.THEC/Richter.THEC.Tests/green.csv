@@ -1,0 +1,4 @@
+﻿VendorID,lpep_pickup_datetime,lpep_dropoff_datetime,store_and_fwd_flag,RatecodeID,PULocationID,DOLocationID,passenger_count,trip_distance,fare_amount,extra,mta_tax,tip_amount,tolls_amount,ehail_fee,improvement_surcharge,total_amount,payment_type,trip_type,congestion_surcharge
+2,2021-03-01 00:05:42,2021-03-01 00:14:03,N,1,83,129,1,1.56,7.5,0.5,0.5,0,0,,0.3,8.8,1,1,0
+2,2021-03-01 00:21:03,2021-03-01 00:26:17,N,1,243,235,1,.96,6,0.5,0.5,0,0,,0.3,7.3,2,1,0
+2,2021-03-01 00:02:06,2021-03-01 00:22:26,N,1,75,242,1,9.93,28,0.5,0.5,2,0,,0.3,31.3,1,1,0
