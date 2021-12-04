@@ -1,3 +1,16 @@
+# Projects
+## Richter.THEC.Data
+
+This project 
+* is for transforming the source data into a training format for ML.NET. 
+* also has methods that can be used to transform the API's user input. 
+
+## Richter.THEC.Model
+
+This project 
+* building ML.NET models that the API will use to return predictions.
+
+
 # Data Models
 
 ## Notes

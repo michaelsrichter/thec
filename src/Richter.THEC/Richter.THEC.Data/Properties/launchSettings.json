@@ -2,7 +2,7 @@
   "profiles": {
     "Richter.THEC.Data": {
       "commandName": "Project",
-      "commandLineArgs": "\"C:\\Users\\mrichter\\Downloads\\yellow_tripdata_2021-03.csv\" \"C:\\Users\\mrichter\\Downloads\\green_tripdata_2021-03.csv\" \"C:\\Users\\mrichter\\Downloads\\trainingDistance.csv\""
+      "commandLineArgs": "\"C:\\Users\\mrichter\\Downloads\\yellow_tripdata_2021-03.csv\" \"C:\\Users\\mrichter\\Downloads\\green_tripdata_2021-03.csv\" \"C:\\Users\\mrichter\\Downloads\\trainingDistance3.csv\""
     }
   }
 }

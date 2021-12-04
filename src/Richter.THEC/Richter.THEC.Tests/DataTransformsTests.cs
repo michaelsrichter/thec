@@ -80,14 +80,13 @@ namespace Richter.THEC.Tests
                 StartLocation = 12, 
                 EndLocation = 14, 
                 Provider = "Yellow", 
-                EndTime = new DateTime(2021, 12, 3, 14, 2, 6), 
-                StartTime = new DateTime(2021, 12, 3, 14, 42, 6), 
+                EndTime = new DateTime(2021, 12, 3, 14, 42, 6), 
+                StartTime = new DateTime(2021, 12, 3, 14, 2, 6), 
                 Total = 25.7 };
             var trainingdistancetrip = DataTransforms.GetTrainingDistanceTripFromTrip(trip);
 
             Assert.AreEqual(40, trainingdistancetrip.Duration, 0.001);
-            Assert.AreEqual(14, trainingdistancetrip.HourOfDay);
-            Assert.AreEqual(5, trainingdistancetrip.DayOfWeek);
+            Assert.AreEqual("5-14", trainingdistancetrip.DayAndHour);
         }
 
         [TestMethod]

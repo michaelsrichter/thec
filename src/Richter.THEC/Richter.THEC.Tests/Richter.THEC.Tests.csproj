@@ -33,6 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Richter.THEC.Api\Richter.THEC.Api.csproj" />
     <ProjectReference Include="..\Richter.THEC.Data\Richter.THEC.Data.csproj" />
   </ItemGroup>
 
