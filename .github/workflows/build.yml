@@ -6,13 +6,11 @@ on:
   pull_request:
     branches: [ main ]
 
-defaults:
-  run:
-    working-directory: ./src
-
 jobs:
   build:
-
+    defaults:
+      run:
+        working-directory: ./src
     runs-on: ubuntu-latest
 
     steps:
