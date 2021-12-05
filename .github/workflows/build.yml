@@ -39,7 +39,9 @@ jobs:
     - name: Build the Docker image
       run: docker build --file Dockerfile --tag richterthecapi:build ..
     - name: Run the Docker image
-      run: docker run -d -p 8080:80 --name richterthecapi --env ASPNETCORE_ENVIRONMENT=Development richterthecapi:build
+      run: |
+        docker run -d -p 8080:80 --name richterthecapi --env ASPNETCORE_ENVIRONMENT=Development richterthecapi:build
+        sleep 10 
     - name: Test the Docker container
       run: |
         curl -X POST \
