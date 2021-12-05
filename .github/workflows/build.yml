@@ -37,9 +37,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build --file Dockerfile --tag richterthecapi:$(date +%s) ..
+      run: docker build --file Dockerfile --tag richterthecapi:build ..
     - name: Run the Docker image
-      run: docker run -d -p 8080:80 --name richterthecapi --env ASPNETCORE_ENVIRONMENT=Development richtertechapi
+      run: docker run -d -p 8080:80 --name richterthecapi --env ASPNETCORE_ENVIRONMENT=Development richterthecapi:build
     - name: Test the Docker container
       run: |
         curl -X POST \
