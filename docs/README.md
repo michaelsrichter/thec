@@ -24,9 +24,10 @@
 In the `src/Richter.THEC/Richter.THEC.Api` directory run:
 ```
 docker build -f Dockerfile -t richterthecapi ..
-docker run -d -p 8080:80 --name richterthecapi --env ASPNETCORE_ENVIRONMENT=Development richtertechapi
-
+docker run -d -p 8080:80 --name richterthecapi --env ASPNETCORE_ENVIRONMENT=Development richterthecapi
 ```
+(:warning: notice 2 periods '..' at the end of the build command, not one.)
+
 You can test it using CURL, like this
 ```
 curl -X POST http://localhost:8080/api/distance -H 'Content-Type: application/json' -d '{"provider":"Yellow","distance":10,"when":"2021-12-05T17:29:11.670Z"}'
