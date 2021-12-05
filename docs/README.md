@@ -40,6 +40,8 @@ http://localhost:8080/swagger/index.html
 Click POST /api/distance
 
 ![Swagger Try](swagger-try.png "Swagger Try")
+
+
 Click Try it out
 Past in sample Json
 ```
