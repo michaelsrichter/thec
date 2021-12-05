@@ -38,3 +38,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build --file Dockerfile --tag richterthecapi:$(date +%s) ..
+    - name: Run the Docker image
+      run: docker run -d -p 8080:80 --name richterthecapi --env ASPNETCORE_ENVIRONMENT=Development richtertechapi
+    - name: Test the Docker container
+      run: curl -X POST http://localhost:8080/api/distance -H "Content-Type: application/json" -d "{\"provider\":\"Yellow\",\"distance\":10,\"when\":\"2021-12-05T17:29:11.670Z\"}"
