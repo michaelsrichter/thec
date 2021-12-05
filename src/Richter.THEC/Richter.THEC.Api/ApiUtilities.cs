@@ -34,8 +34,6 @@ namespace Richter.THEC.Api
             var provider = tripInput.Provider;
             for (int i = -5; i < 6; i++)
             {
-
-
                 var option = new TripOption();
                 option.Provider = tripInput.Provider;
                 tripInput.When = when.AddHours(i);

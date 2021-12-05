@@ -1,8 +1,6 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
 using System.Globalization;
-using System.Reflection.Metadata.Ecma335;
-using System.Transactions;
 
 namespace Richter.THEC.Data
 {

@@ -14,18 +14,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup Label="TotalByDistance">
-    <None Include="TotalByDistance.consumption.cs">
-      <DependentUpon>TotalByDistance.mbconfig</DependentUpon>
-    </None>
-    <None Include="TotalByDistance.training.cs">
-      <DependentUpon>TotalByDistance.mbconfig</DependentUpon>
-    </None>
-    <None Include="TotalByDistance.zip">
-      <DependentUpon>TotalByDistance.mbconfig</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
   <ItemGroup Label="DurationByDistance">
     <None Include="DurationByDistance.consumption.cs">
       <DependentUpon>DurationByDistance.mbconfig</DependentUpon>
@@ -36,6 +24,18 @@
     <None Include="DurationByDistance.zip">
       <DependentUpon>DurationByDistance.mbconfig</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="TotalByDistance">
+    <None Include="TotalByDistance.consumption.cs">
+      <DependentUpon>TotalByDistance.mbconfig</DependentUpon>
+    </None>
+    <None Include="TotalByDistance.training.cs">
+      <DependentUpon>TotalByDistance.mbconfig</DependentUpon>
+    </None>
+    <None Include="TotalByDistance.zip">
+      <DependentUpon>TotalByDistance.mbconfig</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 </Project>
